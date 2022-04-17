@@ -30,7 +30,9 @@ class EmpleadoController extends Controller
 
         $empleadoBuscado = \DB::connection('mysql')
         ->table('empleados')
-        ->where('Nombre',$nombreEmpleado)
+        ->where('Nombre','LIKE','%'.$nombreEmpleado.'%')
+        ->orWhere('ApellidoPaterno','LIKE','%'.$nombreEmpleado.'%')
+        ->orWhere('ApellidoMaterno','LIKE','%'.$nombreEmpleado.'%')
         ->get();
 
         //dd($empleadoBuscado);

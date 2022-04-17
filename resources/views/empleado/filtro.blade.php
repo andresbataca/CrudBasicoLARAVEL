@@ -3,14 +3,6 @@
 @section('content')
 <div class="container">
 
-<!-- aqui validamos el hecho de que haya o no una session o variable llamada mensaje
- si lo hay, mandamos a mostrar este mensaje, recordemos que tenemos varios mensajes 
- que vienen enrutados junto a la ruta desde alguno de los metodos que usamos en el
- controlador, como empleado creado, eliminado o actualizado, entonces si vienen
- estos mensajes se ejecuta el codigo dentro del if, en este caso un boton ya hecho 
- en bootstrap
--->
-
 
 <div class="row">
     <div class="col-xl-3">
