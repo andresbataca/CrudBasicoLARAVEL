@@ -24,6 +24,19 @@ class EmpleadoController extends Controller
         return view('empleado.index',$datos);
     }
 
+    public function filter (Request $request){
+        
+        $nombreEmpleado = $request->get('nombre_empleado');
+
+        $empleadoBuscado = \DB::connection('mysql')
+        ->table('empleados')
+        ->where('Nombre',$nombreEmpleado)
+        ->get();
+
+        //dd($empleadoBuscado);
+        return view('empleado.filtro',['empleadoBuscado'=>$empleadoBuscado]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

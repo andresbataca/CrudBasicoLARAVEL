@@ -11,15 +11,6 @@
  en bootstrap
 -->
 
-    @if(Session::has('mensaje'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{Session::get('mensaje')}}
-
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true"></span>
-    </button>
-    </div>
-    @endif
 
 <div class="row">
     <div class="col-xl-3">
@@ -56,7 +47,7 @@
     </thead>
     <tbody>
 
-    @foreach ( $empleados as $empleado )
+    @foreach ( $empleadoBuscado as $empleado )
         <tr>
             <td>{{ $empleado -> id}}</td>
             <td>
@@ -101,16 +92,5 @@
       
     </tbody>
 </table>
-{!! $empleados->links() !!}
 </div>
 @endsection
-
-<!-- al final usamos {!! $empleados->links() !!} para paginar, esto usando la clase 
-use Illuminate\Pagination\Paginator; en appserviiceprovider en providers dentro de http,
-usamos el siguiente codigo instanciando la clase 
- public function boot()
-    {
-        //
-        Paginator::useBootstrap();
-    }
--->

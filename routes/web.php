@@ -41,6 +41,8 @@ Auth::routes(['register'=>false,'reset'=>false]);
 
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
+Route::get('empleadoBuscado', [EmpleadoController::class, 'filter']);
+
 
 /*aqui lo que hacemos es autenticar que si el usuario se logeo, pueda ingresar a
 al metodo index de la clase EmpleadoController */
